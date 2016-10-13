@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+  <extension id="com.dynatrace.diagnostics.knowledgesensor.dotnet.MS_CRM4" point="com.dynatrace.diagnostics.knowledgesensor">
+    <sensorpack>
+      <sensor type="java" key="com.dynatrace.diagnostics.knowledgesensor.dotnet.MS_CRM4" description="MS CRM4 - PreProduction" userdefined="true" group="ERP_Framworks" order="3" defaultorder="0" hint="Microsoft CRM Version 4 pre-production sensor pack.  This has not been tested for production">
+        <class pattern="Microsoft.Crm.Application.Platform.DataSource" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="Update" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="Microsoft.Crm.Application.Platform.Entity" capture="false" match="equals" />
+            <argument pattern="boolean" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Application.Pages.Root.TopBar" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="IsCrmLive" match="equals" placed="include" capturereturn="false" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="protectedType" api="MS_CRM4" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="Microsoft.Crm.Web.Default" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="OnPreInit" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="protectedType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="System.EventArgs" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Caching.ObjectModelCacheLoader`2" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="LoadCacheData" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="!0" capture="false" match="equals" />
+            <argument pattern="Microsoft.Crm.IOrganizationContext" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Web.Controls.Lookup.LookupPageBase" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="RenderSearchHeader" match="equals" placed="include" capturereturn="false" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="protectedType" api="MS_CRM4" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="Microsoft.Crm.Web.Reporting.CrmReportServerConnection" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="get_ReportServerUrl" match="equals" placed="include" capturereturn="false" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="Microsoft.Crm.Application.WebServices.AppGridWebService" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="Refresh" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="System.String" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Web.Reporting.CrmReportViewerMessages" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="get_ChangeCredentialsToolTip" match="equals" placed="include" capturereturn="false" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="Microsoft.Crm.Application.Components.UI.DataGrid" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="Render" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="protectedType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="System.Web.UI.HtmlTextWriter" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Application.Web.Pages.ErrorHandlerPage" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="OnPreRender" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="protectedType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="System.EventArgs" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Application.Controls.AppGridDataProvider" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="GetDataXml" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="protectedType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="Microsoft.Crm.QueryBuilder" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Application.Controls.LookupGridDataProvider" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="GetDataXml" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="protectedType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="Microsoft.Crm.QueryBuilder" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Web.Loader" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="OnUnload" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="protectedType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="System.EventArgs" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Application.Platform.EntityProxy" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="UpdateAndRetrieve" match="equals" placed="include" capturereturn="false" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="Microsoft.Crm.Web.Reporting.CrmReportViewerMessages" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="get_SelectFormat" match="equals" placed="include" capturereturn="false" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="Microsoft.Crm.Application.Controls.AppAreaPage" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="Render" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="protectedType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="System.Web.UI.HtmlTextWriter" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Web.Loader" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="OnPreInit" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="protectedType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="System.EventArgs" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Application.Components.UI.CrmUIControlBase" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="OnInit" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="protectedType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="System.EventArgs" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Application.WebServices.AdvancedFind" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="GetLinkedEntityList" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="System.String" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Web.Controls.Lookup.LookupSinglePage" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="ConfigureForm" match="equals" placed="include" capturereturn="false" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="protectedType" api="MS_CRM4" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="Microsoft.Crm.Web.SFA.Quotes.dlg_accept" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="ConfigureForm" match="equals" placed="include" capturereturn="false" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="protectedType" api="MS_CRM4" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="Microsoft.Crm.Application.Controls.AppPage" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="RenderInitCalendar" match="equals" placed="include" capturereturn="false" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="protectedType" api="MS_CRM4" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="Microsoft.Crm.Application.Components.UI.CrmUIControlBase" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="OnPreRender" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="protectedType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="System.EventArgs" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Application.Components.UI.DataGrid" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="RenderData" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="System.Web.UI.HtmlTextWriter" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Application.Platform.EntityProxy" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="Update" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="boolean" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Web.Reporting.CrmReportViewerMessages" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="get_ViewReportButtonText" match="equals" placed="include" capturereturn="false" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="Microsoft.Crm.Sdk.RequestBase" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="Process" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="Microsoft.Crm.Sdk.CorrelationToken" capture="false" match="equals" />
+            <argument pattern="Microsoft.Crm.Sdk.CallerOriginToken" capture="false" match="equals" />
+            <argument pattern="Microsoft.Crm.BusinessEntities.UserAuth" capture="false" match="equals" />
+            <argument pattern="System.Guid" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Extensibility.InternalMessageDispatcher" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="Execute" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="Microsoft.Crm.Extensibility.PipelineExecutionContext" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Web.Default" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="OnPreRender" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="protectedType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="System.EventArgs" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Sdk.InProcessCrmService" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="Execute" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="System.Object" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Application.Controls.AppUIPage" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="ConfigureForm" match="equals" placed="include" capturereturn="false" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="protectedType" api="MS_CRM4" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="Microsoft.Crm.Application.Pages.Common.CrmStyles" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="GetFontResourceAttribute" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="System.String" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Web.Reporting.CrmReportViewerMessages" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="get_SelectAValue" match="equals" placed="include" capturereturn="false" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="Microsoft.Crm.Application.Controls.AnonymousPage" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="OnInit" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="protectedType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="System.EventArgs" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Web.Loader" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="OnInitComplete" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="protectedType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="System.EventArgs" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.BusinessEntities.QueryProcessObject" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="RetrieveQueryAsResultXml" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="Microsoft.Crm.Query.EntityExpression" capture="false" match="equals" />
+            <argument pattern="Microsoft.Crm.BusinessEntities.QueryStrategyType" capture="false" match="equals" />
+            <argument pattern="Microsoft.Crm.BusinessEntities.ExecutionContext" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Web.LeftPage" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="RenderDefaultArea" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="protectedType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="System.IO.TextWriter" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Web.Default" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="OnInitComplete" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="protectedType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="System.EventArgs" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Application.Forms.DataEventProcessor" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="Raise" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="Microsoft.Crm.Application.Types.FormEventId" capture="false" match="equals" />
+            <argument pattern="Microsoft.Crm.Application.Forms.FormState" capture="false" match="equals" />
+            <argument pattern="Microsoft.Crm.Caching.IUser" capture="false" match="equals" />
+            <argument pattern="System.String" capture="false" match="equals" />
+            <argument pattern="Microsoft.Crm.Application.Platform.Entity" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Application.Platform.ServiceCommands.PlatformCommand" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="ExecuteInternal" match="equals" placed="include" capturereturn="false" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="protectedType" api="MS_CRM4" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="Microsoft.Crm.Application.Utility.Util" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="IsLive" match="equals" placed="include" capturereturn="false" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="Microsoft.Crm.Application.Forms.AppForm" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="RaiseDataEvent" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="Microsoft.Crm.Application.Types.FormEventId" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Application.Controls.AppGridUIProvider" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="Render" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="System.Web.UI.HtmlTextWriter" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Application.Menus.AppMenuBar" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="Execute" match="equals" placed="include" capturereturn="false" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="Microsoft.Crm.Extensibility.ExternalMessageDispatcher" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="Execute" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="System.String" capture="false" match="equals" />
+            <argument pattern="int" capture="false" match="equals" />
+            <argument pattern="int" capture="false" match="equals" />
+            <argument pattern="Microsoft.Crm.Sdk.PropertyBag" capture="false" match="equals" />
+            <argument pattern="Microsoft.Crm.Sdk.CorrelationToken" capture="false" match="equals" />
+            <argument pattern="Microsoft.Crm.Sdk.CallerOriginToken" capture="false" match="equals" />
+            <argument pattern="Microsoft.Crm.BusinessEntities.UserAuth" capture="false" match="equals" />
+            <argument pattern="System.Guid" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Sdk.ConversionDescription" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="Execute" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="Microsoft.Crm.Sdk.PropertyBag" capture="false" match="equals" />
+            <argument pattern="Microsoft.Crm.BusinessEntities.ICrmConversionContext" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Web.Controls.Lookup.LookupPageBase" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="RenderButtons" match="equals" placed="include" capturereturn="false" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="protectedType" api="MS_CRM4" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="Microsoft.Crm.Application.Forms.CustomizableForm" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="Execute" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="Microsoft.Crm.Application.Platform.Entity" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Application.Forms.EndUserForm" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="Initialize" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="protectedType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="Microsoft.Crm.Application.Platform.Entity" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Application.WebServices.DateTimeWebService" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="GetFormattedDate" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="System.String" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Extensibility.MessageProcessor" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="Execute" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="Microsoft.Crm.Extensibility.PipelineExecutionContext" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Application.Controls.AppPage" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="OnInit" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="protectedType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="System.EventArgs" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Web.Reporting.CrmReportViewerMessages" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="get_ChangeCredentialsText" match="equals" placed="include" capturereturn="false" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="Microsoft.Crm.Web.Reporting.CrmReportViewerMessages" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="get_InvalidPageNumber" match="equals" placed="include" capturereturn="false" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="Microsoft.Crm.Application.Components.Sdk.FormControls.Web.DateTimeControl" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="set_ShowTime" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="boolean" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Web.Default" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="OnUnload" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="protectedType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="System.EventArgs" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Application.Components.Sdk.FormControls.Web.CrmWebFormControlUIWrapper" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="AddExpando" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="System.String" capture="false" match="equals" />
+            <argument pattern="System.String" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Web.Reporting.CrmReportServerCredentials" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="get_ImpersonationUser" match="equals" placed="include" capturereturn="false" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="Microsoft.Crm.Application.WebServices.AdvancedFind" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="GetDefaultAdvancedFindView" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="System.String" capture="false" match="equals" />
+            <argument pattern="boolean" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Web.Default" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="Render" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="protectedType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="System.Web.UI.HtmlTextWriter" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Application.Pages.Common.CrmStyles" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="GetFontResourceHtml" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="System.String" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Web.Reporting.CrmReportViewerMessages" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="get_PasswordPrompt" match="equals" placed="include" capturereturn="false" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="Microsoft.Crm.Web.Loader" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="Render" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="protectedType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="System.Web.UI.HtmlTextWriter" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Application.Pages.Root.TopBar" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="ShouldRenderSignOutLink" match="equals" placed="include" capturereturn="false" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="protectedType" api="MS_CRM4" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="Microsoft.Crm.Application.WebServices.AdvancedFind" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="GetEntityFieldList" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="System.String" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Application.Pages.Common.CrmStyles" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="GetFontResourceForStyle" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="System.String" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Web.LeftPage" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="RenderSiteMapXml" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="protectedType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="System.IO.TextWriter" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Web.Loader" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="OnPreRender" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="protectedType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="System.EventArgs" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Application.Platform.EntityProxy" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="UpdateAndRetrieve" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="System.String" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Application.Components.UI.CrmUIControlBase" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="SetHeaders" match="equals" placed="include" capturereturn="false" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="Microsoft.Crm.Application.Controls.AppPage" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="OnLoad" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="protectedType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="System.EventArgs" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Application.Platform.ServiceCommands.UpdateCommand" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="Execute" match="equals" placed="include" capturereturn="false" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="Microsoft.Crm.Application.Components.UI.CrmUIControlBase" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="RenderControl" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="System.Web.UI.HtmlTextWriter" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Web.SFA.SalesOrderDetailPage" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="ConfigureForm" match="equals" placed="include" capturereturn="false" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="protectedType" api="MS_CRM4" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="Microsoft.Crm.Controls.Header" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="Render" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="protectedType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="System.Web.UI.HtmlTextWriter" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Web.Reporting.CrmReportViewerMessages" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="get_UserNamePrompt" match="equals" placed="include" capturereturn="false" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="Microsoft.Crm.ApplicationQuery" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="GetViewData" match="equals" placed="include" capturereturn="false" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="Microsoft.Crm.Application.Controls.AppGridDataProvider" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="Execute" match="equals" placed="include" capturereturn="false" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="Microsoft.Crm.Application.Menus.AppGlobalWebMenuBar" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="Execute" match="equals" placed="include" capturereturn="false" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="Microsoft.Crm.Application.Pages.Root.TopBar" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="RenderUserInfo" match="equals" placed="include" capturereturn="false" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="protectedType" api="MS_CRM4" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="Microsoft.Crm.Application.Pages.Common.CrmFonts" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="Render" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="protectedType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="System.Web.UI.HtmlTextWriter" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Extensibility.InternalOperationPlugin" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="Execute" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active">
+            <argument pattern="Microsoft.Crm.Sdk.IPluginExecutionContext" capture="false" match="equals" />
+          </method>
+        </class>
+        <class pattern="Microsoft.Crm.Web.Reporting.CrmReportViewerMessages" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="get_ProgressText" match="equals" placed="include" capturereturn="false" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="Microsoft.Crm.Application.Menus.AppGenericMenuBar" placed="true" match="equals" delegationsuppression="false" techtype="dotnet">
+          <method pattern="Execute" match="equals" placed="include" capturereturn="false" argsspecified="false" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="publicType" api="MS_CRM4" inheritance="auto" capture="active" />
+        </class>
+        <class pattern="Microsoft.Crm.Application.Security.WRPCContext" placed="true" match="starts" delegationsuppression="false" techtype="dotnet">
+          <method pattern="" match="equals" placed="include" capturereturn="false" argsspecified="true" overrideable="true" synctime="true" onlyinstrumentifsynchappens="false" visibility="protectedType" api="MS_CRM_Security" inheritance="auto" capture="active">
+            <argument pattern="" capture="true" match="starts" />
+          </method>
+        </class>
+      </sensor>
+    </sensorpack>
+  </extension>
+</plugin>
+

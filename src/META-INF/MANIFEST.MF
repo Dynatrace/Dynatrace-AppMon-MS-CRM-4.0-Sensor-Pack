@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: java Knowledge Sensor
+Bundle-SymbolicName: com.dynatrace.diagnostics.knowledgesensor.dotnet.MS_CRM4;singleton:=true
+Bundle-Version: 3.0.1.1559
+Bundle-Vendor: dynaTrace Diagnostics
+Require-Bundle: com.dynatrace.diagnostics.sdk
